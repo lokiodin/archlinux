@@ -125,3 +125,15 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 Et maintenant on peut utiliser le script `install.sh`.
+
+
+**LA FIN**
+Après avoir fait toutes ces commandes, il faut quitter le chroot.
+
+Puis unmount les differents /dev/sdax
+
+```
+umount -R /mnt
+```
+
+Et enfin `shutdown now` ou `reboot`.
