@@ -189,7 +189,7 @@ function set_timezone(){
 
 function set_locale(){
 	echo_green "Configuration des locales (langue en EN)"
-	sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+	sed -i 's/#fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g' /etc/locale.gen
 	echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
 	locale-gen
 }
