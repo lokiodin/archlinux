@@ -124,4 +124,4 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-At this point, the `bootstrap.sh` script could be used.
+Et maintenant on peut utiliser le script `install.sh`.
