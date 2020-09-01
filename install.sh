@@ -42,10 +42,11 @@ VIM_DEPENDENCIES="vim"
 TMUX_DEPENDENCIES="tmux"
 X_DEPENDENCIES="xorg-xinit xorg-server xorg-xrandr"
 YAY_DEPENDENCINES="base-devel"
-I3_DEPENDENCIES="i3 gnu-free-fonts"
+I3_DEPENDENCIES="i3-wm gnu-free-fonts"
 TERMINATOR_DEPENDENCIES="terminator"
 DMENU_DEPENDENCIES="dmenu"
 FIREFOX_DEPENDENCIES="firefox"
+OTHER_DEPENDENCIES="networkmanager tree"
 
 DEPENDENCIES="\
  $SUDO_DEPENDENCIES \

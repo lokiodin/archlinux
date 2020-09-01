@@ -233,12 +233,13 @@ create_new_user
 configure_pacman
 install_niceties
 configure_x
-configure_terminator
+configure_terminator 
 configure_bashrc
 configure_tmux
 configure_vim
 configure_git
 prepare_opt
+
 
 install_yay
 install_more_niceties
