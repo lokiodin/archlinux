@@ -45,6 +45,7 @@ function format_part(){
 	swapon /dev/sda2
 }
 
+
 ####################################
 
 
