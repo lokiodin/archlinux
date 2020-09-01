@@ -55,5 +55,4 @@ echo_yellow "##############################"
 echo_yellow " INSTALLATION OF THE BEGINING"
 echo_yellow "##############################"
 
-parted()
-
+parted
