@@ -32,8 +32,7 @@ function echo_yellow(){
 }
 
 
-
-fonction parted(){
+function parted(){
 	echo_green "Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)"
 	parted --script /dev/sda \
 		mklabel gpt \
@@ -42,7 +41,7 @@ fonction parted(){
 		mkpart part_efi ext4 2GiB 100% \
 }
 
-fonction format_part(){
+function format_part(){
 	mkfs.fat -F 32 /dev/sda1
 	mkfs.ext4 /dev/sda3
 	mkswap /dev/sda2
