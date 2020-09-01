@@ -34,7 +34,7 @@ function echo_yellow(){
 
 function parted(){
 	# echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
-	parted < parted.instruction
+	parted /dev/sda < parted.instruction
 	# echo "LALALALALLALA"
 }
 

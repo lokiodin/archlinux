@@ -1,4 +1,3 @@
-/dev/sda
 mklabel gpt
 mkpart part_efi fat32 1MiB 1GiB
 mkpart part_efi linux-swap 1GiB 2GiB
