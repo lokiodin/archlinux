@@ -33,13 +33,8 @@ function echo_yellow(){
 
 
 function parted(){
-	id
-	echo 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
-	# parted --script /dev/sda \
-	# 	mklabel gpt \
-	# 	mkpart part_efi fat32 1MiB 1GiB \
-	# 	mkpart part_efi linux-swap 1GiB 2GiB \
-	# 	mkpart part_efi ext4 2GiB 100%
+	echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
+	parted < parted.instruction
 	echo "LALALALALLALA"
 }
 
