@@ -218,7 +218,7 @@ function install_niceties(){
 }
 
 function install_more_niceties(){
-	yay -Sy $YAY_INSTALL --noconfirm
+	sudo -u $NEW_USER bash -c 'yay -Sy $YAY_INSTALL --noconfirm'
 }
 
 if [ "$1" == "" ]
