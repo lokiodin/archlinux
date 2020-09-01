@@ -34,11 +34,22 @@ function echo_yellow(){
 
 
 fonction parted(){
-	echo_green "Partitioning of /dev/sda"
-	parted /dev/sda mklabel gpt
-	parted mkpart part_efi fat32 0 1GiB
-
+	echo_green "Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)"
+	parted --script /dev/sda \
+		mklabel gpt \
+		mkpart part_efi fat32 1MiB 1GiB \
+		mkpart part_efi linux-swap 1GiB 2GiB \
+		mkpart part_efi ext4 2GiB 100% \
 }
+
+fonction format_part(){
+	mkfs.fat -F 32 /dev/sda1
+	mkfs.ext4 /dev/sda3
+	mkswap /dev/sda2
+	swapon /dev/sda2
+}
+
+####################################
 
 
 echo_yellow "##############################"
