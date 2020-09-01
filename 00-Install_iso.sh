@@ -33,7 +33,7 @@ function echo_yellow(){
 
 
 function parted(){
-	# echo_green '"Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)"'
+	echo_green '"Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)"'
 	parted --script /dev/sda \
 		mklabel gpt \
 		mkpart part_efi fat32 1MiB 1GiB \
