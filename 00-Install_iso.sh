@@ -33,9 +33,9 @@ function echo_yellow(){
 
 
 function parted(){
-	echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
+	# echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
 	parted < parted.instruction
-	echo "LALALALALLALA"
+	# echo "LALALALALLALA"
 }
 
 function format_part(){
@@ -53,6 +53,6 @@ echo_yellow "##############################"
 echo_yellow " INSTALLATION OF THE BEGINING"
 echo_yellow "##############################"
 
-echo "avant"
+# echo "avant"
 parted
 echo "FINININ"
