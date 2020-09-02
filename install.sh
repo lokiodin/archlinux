@@ -157,22 +157,16 @@ function configure_tmux(){
 
 function configure_vim(){
 	echo_green "Configuration de vim..."
-	echo "11111111111111111"
 	sudo -u $NEW_USER bash -c 'curl -sfLo ~/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
 
-	echo "22222222222222222"
 	sudo -u $NEW_USER bash -c 'cp vimrc ~/.vimrc'
-	echo "33333333333333333"
+	echo "Problem THERE"
 	sudo -u $NEW_USER bash -c 'vim ~/.vimrc +PlugInstall +q +q'
-	echo "44444444444444444"
 	sudo -u $NEW_USER bash -c 'rm ~/.vimrc'
 
 	# Mais aussi pour le root user !!
-	echo "44444444444444444"
 	curl -sfLo ~/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-	echo "55555555555555555"
 	cp vimrc /etc/vimrc
-	echo "66666666666666666"
 	vim /etc/vimrc +PlugInstall +q +q
 }
 
