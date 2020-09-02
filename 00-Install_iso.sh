@@ -65,12 +65,22 @@ echo_yellow "###############################"
 echo_yellow " INSTALLATION OF THE BEGINNING"
 echo_yellow "###############################"
 
-# echo "avant"
+
 parted
 format_part
 mounting
 install_soft
 
+cp -r $(pwd)/archlinux /mnt/root/
+
+echo_red "############################ FOR THE NEXT #########################"
+echo_red "																	"
+echo_red " Run ./root/archlinux/install.sh <user> to finish the installation"
+echo_red "																	"
+echo_red "############################ ############ #########################"
+
+
+arch-chroot /mnt
 
 echo_yellow "###############################"
 echo_yellow "     END OF THE BEGINNING"

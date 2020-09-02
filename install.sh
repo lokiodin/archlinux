@@ -34,7 +34,7 @@ function echo_yellow(){
 
 ###############################################################
 
-
+GRUB_DEPENDENCIES="os-prober efibootmgr grub"
 SUDO_DEPENDENCIES="sudo"
 AUDIO_DEPENDENCES="pulseaudio pavucontrol"
 GIT_DEPENDENCIES="git"
@@ -71,6 +71,24 @@ POLYBAR_DEPENDENCIES="polybar"
 YAY_INSTALL="\
  $POLYBAR_DEPENDENCIES \
 "
+
+##############################################################
+
+function install_grub(){
+	echo_green "Installation de Grub"
+
+	pacman -Sy $GRUB_DEPENDENCIES --noconfirm --color=always
+	grub-install /dev/sda
+	if ! [[ $? ]]; then
+		echo_red "ERROR in Grub installation ... A bit problematic"
+		echo_red "END OF THE PROGRAMM"
+	else
+		echo_green "Ecriture de grub-mkconfig"
+		grub-mkconfig -o /boot/grub/grub.cfg
+	fi
+}
+
+
 
 ##############################################################
 
@@ -231,6 +249,7 @@ then
 	exit
 fi
 
+install_grub
 pre_install
 create_new_user
 configure_pacman
