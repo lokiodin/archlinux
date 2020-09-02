@@ -33,14 +33,8 @@ function echo_yellow(){
 
 
 function parted(){
-	# echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
-	cat parted.instruction | parted
-	# parted -s /dev/sda '\
-	# 	mklabel gpt \
-	# 	mkpart part_efi fat32 1MiB 1GiB \
-	# 	mkpart part_efi linux-swap 1GiB 2GiB \
-	# 	mkpart part_efi ext4 2GiB 100%'
-	# echo "LALALALALLALA"
+	echo_green 'Partitioning of /dev/sda to sda1 (efi), sda2 (swap) and sda3 (ext4)'
+	bash -c "cat parted.instruction | parted"
 }
 
 function format_part(){
@@ -50,14 +44,34 @@ function format_part(){
 	swapon /dev/sda2
 }
 
+function mounting(){
+	echo_green "Mounting some partition (sda1 will be mounted in /boot/efi of sda3)"
+	mount /dev/sda3 /mnt
+	mkdir /mnt/boot
+	mkdir /mnt/boot/efi
+	mount /dev/sda1 /mnt/boot/efi
+}
+
+function install_soft(){
+	echo_green "Installing with pacstrap and genfstab by UUID"
+	pacstrap /mnt base linux linux-firmware
+	genfstab -U /mnt >> /mnt/etc/fstab
+}
 
 ####################################
 
 
-echo_yellow "##############################"
-echo_yellow " INSTALLATION OF THE BEGINING"
-echo_yellow "##############################"
+echo_yellow "###############################"
+echo_yellow " INSTALLATION OF THE BEGINNING"
+echo_yellow "###############################"
 
 # echo "avant"
 parted
-echo "FINININ"
+format_part
+mounting
+install_soft
+
+
+echo_yellow "###############################"
+echo_yellow "     END OF THE BEGINNING"
+echo_yellow "###############################"
