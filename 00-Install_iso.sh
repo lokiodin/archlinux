@@ -71,7 +71,7 @@ format_part
 mounting
 install_soft
 
-cp -r $(pwd)/archlinux /mnt/root/
+cp -r $(pwd)/../archlinux /mnt/root/
 
 echo_red "############################ FOR THE NEXT #########################"
 echo_red "																	"
