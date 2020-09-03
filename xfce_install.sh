@@ -40,7 +40,7 @@ AUDIO_DEPENDENCES="pulseaudio pavucontrol"
 GIT_DEPENDENCIES="git"
 VIM_DEPENDENCIES="vim"
 TMUX_DEPENDENCIES="tmux"
-# X_DEPENDENCIES="xorg-xinit xorg-server xorg-xrandr"
+X_DEPENDENCIES="xorg-server xorg-apps xorg-xinit xorg-twm xterm"
 YAY_DEPENDENCINES="base-devel"
 XFCE_DEPENDENCIES="xfce4 xfce4-goodies"
 TERMINATOR_DEPENDENCIES="terminator"
@@ -52,6 +52,7 @@ DEPENDENCIES="\
  $SUDO_DEPENDENCIES \
  $AUDIO_DEPENDENCIES \
  $GIT_DEPENDENCIES \
+ $X_DEPENDENCIES \
  $VIM_DEPENDENCIES \
  $TMUX_DEPENDENCIES \
  $YAY_DEPENDENCIES \
@@ -264,6 +265,6 @@ prepare_opt
 
 install_yay
 install_more_niceties
-
+passwd
 
 cleanup
