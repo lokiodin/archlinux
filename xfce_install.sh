@@ -40,7 +40,7 @@ AUDIO_DEPENDENCES="pulseaudio pavucontrol"
 GIT_DEPENDENCIES="git"
 VIM_DEPENDENCIES="vim"
 TMUX_DEPENDENCIES="tmux"
-X_DEPENDENCIES="xorg-server xorg-apps xorg-xinit xorg-twm xterm"
+X_DEPENDENCIES="xorg-server xorg-apps xorg-xinit xorg-twm xterm gdm"
 YAY_DEPENDENCINES="base-devel"
 XFCE_DEPENDENCIES="xfce4 xfce4-goodies"
 TERMINATOR_DEPENDENCIES="terminator"
@@ -52,11 +52,9 @@ DEPENDENCIES="\
  $SUDO_DEPENDENCIES \
  $AUDIO_DEPENDENCIES \
  $GIT_DEPENDENCIES \
- $X_DEPENDENCIES \
  $VIM_DEPENDENCIES \
  $TMUX_DEPENDENCIES \
  $YAY_DEPENDENCIES \
- $XFCE_DEPENDENCIES \
  $TERMINATOR_DEPENDENCIES \
  $DMENU_DEPENDENCIES \
  $FIREFOX_DEPENDENCES \
@@ -234,13 +232,27 @@ function pre_install(){
 	set_hostname
 }
 
+function install_x(){
+	echo_green "Installing X ..."
+	pacman -Sy $X_DEPENDENCIES --noconfirm --color=always
+}
 
+function install_xfce(){
+	echo_green "Installing Xfce ..."
+	pacman -Sy $XFCE_DEPENDENCIES --noconfirm --color=always
+}
 function install_niceties(){
 	pacman -Sy $DEPENDENCIES --noconfirm --color=always
 }
 
 function install_more_niceties(){
 	sudo -u $NEW_USER bash -c 'yay -Sy $YAY_INSTALL --noconfirm'
+}
+
+function enable_services(){
+	echo_green "Enable some services ..."
+	systemctl enable NetworkManager.services
+	systemctl enable gdm.services
 }
 
 if [ "$1" == "" ]
@@ -254,6 +266,8 @@ install_grub
 pre_install
 create_new_user
 configure_pacman
+install_x
+install_xfce
 install_niceties
 configure_x
 configure_terminator
@@ -265,6 +279,8 @@ prepare_opt
 
 install_yay
 install_more_niceties
-passwd
+
+enable_services
+
 
 cleanup
