@@ -75,6 +75,7 @@ cp -r $(pwd)/../archlinux /mnt/root/
 chmod 777 /mnt/root/archlinux
 chmod 777 /mnt/root/archlinux/*/*
 
+
 echo_red "############################ FOR THE NEXT #########################"
 echo_red "																	"
 echo_red " Run ./root/archlinux/install.sh <user> to finish the installation"
