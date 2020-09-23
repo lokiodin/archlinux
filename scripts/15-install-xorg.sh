@@ -32,7 +32,7 @@ function echo_yellow(){
 
 ###############################################################
 
-X_DEPENDENCIES="xorg-server xorg-server-utils xorg-xinit xterm xorg-twm xorg-xclock"
+X_DEPENDENCIES="xorg-server xorg-apps xorg-xinit xterm xorg-twm xorg-xclock"
 
 ###############################################################
 
