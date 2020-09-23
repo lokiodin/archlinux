@@ -3,6 +3,8 @@
 # To install when you are on chroot (after partionning and configuring with iso)
 #
 
+set -e
+
 # Set up de couleur à utiliser
 COLOR_RED=$(tput setaf 1)
 COLOR_GREEN=$(tput setaf 2)

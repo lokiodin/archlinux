@@ -5,6 +5,7 @@
 # Pour installer Arch Linux plus facilement et rapidement
 # Créé à l'aide de plus bootstrap trouvé
 
+set -e
 
 
 NEW_USER=$1

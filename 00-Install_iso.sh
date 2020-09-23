@@ -7,6 +7,7 @@
 #	 Mounting
 #	 genfstab
 
+set -e
 
 # Define some colors for quick use...
 COLOR_RED=$(tput setaf 1)
