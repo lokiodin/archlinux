@@ -68,32 +68,32 @@ function create_new_user(){
 function configure_terminator(){
 	echo_green "Configuration de Terminator"
 	sudo -u $NEW_USER bash -c 'mkdir -p ~/.config/terminator'
-	sudo -u $NEW_USER bash -c 'cp ../ressources/terminator_config ~/.config/terminator/config'
+	sudo -u $NEW_USER bash -c 'cp ./ressources/terminator_config ~/.config/terminator/config'
 }
 
 function configure_xinit_user(){
 	echo_green "Obtention du fichier default .bashrc"
-	sudo -u $NEW_USER bash -c 'cp ../ressources/xinitrc ~/.xinitrc'
+	sudo -u $NEW_USER bash -c 'cp ./ressources/xinitrc ~/.xinitrc'
 }
 
 function configure_bashrc(){
 	echo_green "Obtention du fichier default .bashrc"
 
-	sudo -u $NEW_USER bash -c 'cp ../ressources/bashrc ~/.bashrc'
+	sudo -u $NEW_USER bash -c 'cp ./ressources/bashrc ~/.bashrc'
 	sudo -u $NEW_USER bash -c '. ~/.bashrc'
 	cp bashrc /etc/bash.bashrc
 }
 
 function configure_tmux(){
 	sudo -u $NEW_USER bash -c "echo 'source \"\$HOME/.bashrc\"' > ~/.bash_profile"
-	sudo -u $NEW_USER bash -c 'cp ../ressources/tmux.conf ~/.tmux.conf'
+	sudo -u $NEW_USER bash -c 'cp ./ressources/tmux.conf ~/.tmux.conf'
 }
 
 function configure_vim(){
 	echo_green "Configuration de vim..."
 	sudo -u $NEW_USER bash -c 'curl -sfLo ~/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
 
-	sudo -u $NEW_USER bash -c 'cp ../ressources/vimrc ~/.vimrc'
+	sudo -u $NEW_USER bash -c 'cp ./ressources/vimrc ~/.vimrc'
 	echo "Problem THERE"
 	# sudo -u $NEW_USER bash -c 'vim ~/.vimrc +PlugInstall +q +q'
 	# sudo -u $NEW_USER bash -c 'rm ~/.vimrc'
