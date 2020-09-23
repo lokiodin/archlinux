@@ -40,7 +40,7 @@ YAY_DEPENDENCINES="base-devel"
 TERMINATOR_DEPENDENCIES="terminator"
 DMENU_DEPENDENCIES="dmenu"
 FIREFOX_DEPENDENCIES="firefox"
-OTHER_DEPENDENCIES="networkmanager tree"
+OTHER_DEPENDENCIES="tree"
 
 DEPENDENCIES="\
  $SUDO_DEPENDENCIES \
@@ -65,5 +65,5 @@ function install_niceties(){
 
 
 install_niceties
-echo_green "Enabling NetworkManager.service"
-systemctl enable NetworkManager.service
+# echo_green "Enabling NetworkManager.service"
+# systemctl enable NetworkManager.service

@@ -35,15 +35,15 @@ XFCE_DEPENDENCIES="xfce4 xfce4-goodies"
 
 ###############################################################
 
-function install_gdm(){
-	echo_green "Install GDM"
-	pacman -Sy gdm --noconfirm --color=always
+# function install_gdm(){
+# 	echo_green "Install GDM"
+# 	pacman -Sy gdm --noconfirm --color=always
 
-	echo_green "#######"
-	echo_green "GDM installed"
-	echo_green "#######"
+# 	echo_green "#######"
+# 	echo_green "GDM installed"
+# 	echo_green "#######"
 
-}
+# }
 
 function install_xfce(){
 	echo_green "Installing Xfce ..."
@@ -55,7 +55,7 @@ function install_xfce(){
 
 }
 
-install_gdm
+# install_gdm
 install_xfce
-echo_green "Enabling gdm.service"
-systemctl enable gdm.service
+# echo_green "Enabling gdm.service"
+# systemctl enable gdm.service

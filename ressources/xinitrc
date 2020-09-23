@@ -9,4 +9,4 @@ export QT_SCALE_FACTOR=1
 xrandr --dpi 220
 xrdb -merge ~/.Xresources
 
-exec i3
+exec startxfce4

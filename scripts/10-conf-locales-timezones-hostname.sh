@@ -76,6 +76,9 @@ function pre_install(){
 	echo_green "#######"
 	echo_green "Timezone, locales, hostname configured"
 	echo_green "#######"
+	echo_green "Installation de networkmanager et son activation"
+	pacman -Sy networkmanager --no-confirm --color=always
+	systemctl enable NetworkManager
 }
 
 pre_install
