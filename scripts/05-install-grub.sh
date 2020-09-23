@@ -40,7 +40,7 @@ GRUB_DEPENDENCIES="os-prober efibootmgr grub"
 function install_grub(){
 	echo_green "Installation de Grub"
 
-	pacman -Sy $GRUB_DEPENDENCIES --noconfirm --color=always
+	pacman -Syq $GRUB_DEPENDENCIES --noconfirm --color=always
 	grub-install /dev/sda
 	if ! [[ $? ]]; then
 		echo_red "ERROR in Grub installation ... A bit problematic"

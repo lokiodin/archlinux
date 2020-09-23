@@ -61,7 +61,7 @@ DEPENDENCIES="\
 
 
 function install_niceties(){
-	pacman -Sy $DEPENDENCIES --noconfirm --color=always
+	pacman -Syq $DEPENDENCIES --noconfirm --color=always
 }
 
 

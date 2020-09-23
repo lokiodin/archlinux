@@ -39,7 +39,7 @@ function set_timezone(){
 	echo_green "Changement de la timezone pour Europe/Paris"
 
 	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-	hwclock --systohc
+	hwclock --Syqstohc
 }
 
 function set_locale(){
@@ -78,7 +78,7 @@ function pre_install(){
 	echo_green "Timezone, locales, hostname configured"
 	echo_green "#######"
 	echo_green "Installation de networkmanager et son activation"
-	pacman -Sy networkmanager --no-confirm --color=always
+	pacman -Syq networkmanager --noconfirm --color=always
 	systemctl enable NetworkManager
 }
 

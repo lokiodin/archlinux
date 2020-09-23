@@ -41,7 +41,7 @@ YAY_INSTALL="\
 ###############################################################
 
 function install_yay(){
-	pacman -Sy --needed base-devel --noconfirm
+	pacman -Syq --needed base-devel --noconfirm
 	pushd /opt/
 	git clone https://aur.archlinux.org/yay.git
 
@@ -53,7 +53,7 @@ function install_yay(){
 }
 
 function install_more_niceties(){
-	sudo -u $NEW_USER bash -c 'yay -Sy $YAY_INSTALL --noconfirm'
+	sudo -u $NEW_USER bash -c 'yay -Syq $YAY_INSTALL --noconfirm'
 }
 
 if [ "$1" == "" ]

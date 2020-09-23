@@ -38,7 +38,7 @@ X_DEPENDENCIES="xorg-server xorg-server-utils xorg-xinit xterm xorg-twm xorg-xcl
 
 function install_xorg(){
 	echo_green "Installing Xorg ..."
-	pacman -Sy $X_DEPENDENCIES --noconfirm --color=always
+	pacman -Syq $X_DEPENDENCIES --noconfirm --color=always
 
 	echo_green "#######"
 	echo_green "Xorg installed"

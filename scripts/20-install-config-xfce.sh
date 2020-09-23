@@ -38,7 +38,7 @@ XFCE_DEPENDENCIES="xfce4 xfce4-goodies"
 
 # function install_gdm(){
 # 	echo_green "Install GDM"
-# 	pacman -Sy gdm --noconfirm --color=always
+# 	pacman -Syq gdm --noconfirm --color=always
 
 # 	echo_green "#######"
 # 	echo_green "GDM installed"
@@ -48,7 +48,7 @@ XFCE_DEPENDENCIES="xfce4 xfce4-goodies"
 
 function install_xfce(){
 	echo_green "Installing Xfce ..."
-	pacman -Sy $XFCE_DEPENDENCIES --noconfirm --color=always
+	pacman -Syq $XFCE_DEPENDENCIES --noconfirm --color=always
 
 	echo_green "#######"
 	echo_green "Xfce4 installed"

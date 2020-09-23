@@ -37,7 +37,7 @@ NEW_USER=$1
 ###############################################################
 
 function create_new_user(){
-	pacman -Sy sudo --noconfirm
+	pacman -Syq sudo --noconfirm
 	id -u $NEW_USER > /dev/null
 
 	if [ $? -eq 1 ]
