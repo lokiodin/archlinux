@@ -39,7 +39,7 @@ function set_timezone(){
 	echo_green "Changement de la timezone pour Europe/Paris"
 
 	ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-	hwclock --Syq stohc
+	hwclock --systohc
 }
 
 function set_locale(){
