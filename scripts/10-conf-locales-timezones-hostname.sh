@@ -64,7 +64,7 @@ EOF
 }
 
 function configure_pacman(){
-	cp ../ressources/mirrorlist /etc/pacman.d/mirrorlist
+	cp ./ressources/mirrorlist /etc/pacman.d/mirrorlist
 }
 
 
