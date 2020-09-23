@@ -73,6 +73,7 @@ install_soft
 
 cp -r $(pwd)/../archlinux /mnt/root/
 chmod 777 /mnt/root/archlinux
+chmod 777 /mnt/root/archlinux/*
 chmod 777 /mnt/root/archlinux/*/*
 
 
