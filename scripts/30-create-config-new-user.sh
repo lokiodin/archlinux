@@ -71,6 +71,11 @@ function configure_terminator(){
 	sudo -u $NEW_USER bash -c 'cp ../ressources/terminator_config ~/.config/terminator/config'
 }
 
+function configure_xinit_user(){
+	echo_green "Obtention du fichier default .bashrc"
+	sudo -u $NEW_USER bash -c 'cp ../ressources/xinitrc ~/.xinitrc'
+}
+
 function configure_bashrc(){
 	echo_green "Obtention du fichier default .bashrc"
 
@@ -90,13 +95,13 @@ function configure_vim(){
 
 	sudo -u $NEW_USER bash -c 'cp ../ressources/vimrc ~/.vimrc'
 	echo "Problem THERE"
-	sudo -u $NEW_USER bash -c 'vim ~/.vimrc +PlugInstall +q +q'
-	sudo -u $NEW_USER bash -c 'rm ~/.vimrc'
+	# sudo -u $NEW_USER bash -c 'vim ~/.vimrc +PlugInstall +q +q'
+	# sudo -u $NEW_USER bash -c 'rm ~/.vimrc'
 
-	# Mais aussi pour le root user !!
-	curl -sfLo ~/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-	cp vimrc /etc/vimrc
-	vim /etc/vimrc +PlugInstall +q +q
+	# # Mais aussi pour le root user !!
+	# curl -sfLo ~/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+	# cp vimrc /etc/vimrc
+	# vim /etc/vimrc +PlugInstall +q +q
 }
 
 function configure_git(){
@@ -125,6 +130,7 @@ fi
 create_new_user
 configure_terminator
 configure_bashrc
+configure_xinit_user
 configure_tmux
 configure_vim
 configure_git
