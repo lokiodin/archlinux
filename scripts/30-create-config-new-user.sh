@@ -5,7 +5,7 @@
 # Pour installer Arch Linux plus facilement et rapidement
 # Créé à l'aide de plus bootstrap trouvé
 
-set -e
+# set -e
 
 # Set up de couleur à utiliser
 COLOR_RED=$(tput setaf 1)
@@ -50,6 +50,7 @@ function create_new_user(){
 		passwd $NEW_USER
 	else
 		echo_green "Utilisateur déjà existant !"
+		exit 1
 	fi
 
 	groupadd sudo
