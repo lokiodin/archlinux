@@ -45,5 +45,5 @@ fi
 ./scripts/30-create-config-new-user.sh $1
 ./scripts/35-install-yay-moreniceties-with-yay.sh $1
 
-
 echo "SCRIPT FINI"
+exit

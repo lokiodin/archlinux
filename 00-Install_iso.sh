@@ -90,3 +90,6 @@ arch-chroot /mnt
 echo_yellow "###############################"
 echo_yellow "     END OF THE BEGINNING"
 echo_yellow "###############################"
+
+umount /mnt/boot/efi
+umount /mnt
