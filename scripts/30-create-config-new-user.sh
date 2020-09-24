@@ -112,7 +112,7 @@ function configure_git(){
 }
 
 function configure_pacman(){
-	cp mirrorlist /etc/pacman.d/mirrorlist
+	cp ressources/mirrorlist /etc/pacman.d/mirrorlist
 }
 
 function prepare_opt(){

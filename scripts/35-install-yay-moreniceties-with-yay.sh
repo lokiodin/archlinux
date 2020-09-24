@@ -48,7 +48,6 @@ function install_yay(){
 	chown $NEW_USER:$NEW_USER /opt/yay
 	cd yay
 	sudo -u $NEW_USER bash -c 'cd /opt/yay/ && yes|makepkg -si'
-	popd
 	sudo -u $NEW_USER bash -c 'yes|yay'
 }
 
